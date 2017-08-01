@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title> Diseases </title>
+	</head>
+	<body>
 
-      <title>Diseases</title>
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
-      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-  </head>
-
-
-  <body>
-      
-  <div id="nav-left-bar">
+		<div id="nav-left-bar">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,23 +16,27 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('diseases')}}">  Diseases   <span class="sr-only">(current)</span></a> <br>
+            <a class="nav-link" href="{{ url_for('diseases')}}">  Diseases   </a> <br>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('howcanihelp')}}">  How Can I Help!  </a> <br>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="{{ url_for('playthegame')}}">  Play The Game! </a> <br>
+            <a class="nav-link disabled" href="{{ url_for('playthegame')}}">  Play The Game! </a> <span class="sr-only">(current)</span> <br> 
           </li>
         </ul>
       </div>
     </nav>
   </div>
 
-  <div id="content-body">
-    
 
-  </div>
-  
-  </body>
+		<h3 class='title1'> Play the game! </h3>
+		<p class= "text1"> Play the game now!
+		<ul>
+		  <li> Diebetes </li>
+		  <li> Cancer </li>
+		  <li> HIV </li>
+		</ul>
+		</p>
+	</body>
 </html>

@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title> Diseases </title>
+	</head>
+	<body>
 
-      <title>Diseases</title>
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
-      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
-  </head>
-
-
-  <body>
-      
-  <div id="nav-left-bar">
+		<div id="nav-left-bar">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,10 +29,14 @@
     </nav>
   </div>
 
-  <div id="content-body">
-    
 
-  </div>
-  
-  </body>
+		<h3 class='title1'> Choose your disease! </h3>
+		<p class= "text1"> Click on a disease from the list below to receive more information about it!
+		<ul>
+		  <li> Diebetes </li>
+		  <li> Cancer </li>
+		  <li> HIV </li>
+		</ul>
+		</p>
+	</body>
 </html>
