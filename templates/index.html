@@ -3,26 +3,45 @@
   <head>
 
       <title>Diseases</title>
-      <!<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
-      <!<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-     <!<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-     <!<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
   </head>
-  <
+
 
   <body>
       
+  <div id="nav-left-bar">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('index')}}">  Navbar  </a>
 
-      <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#"> Home </a>
-    <a href="#"> Diseases </a>
-    <a href="#"> How can I help! </a>
-    <a href="#"> Play The Game! </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=""{{ url_for('')}}"">  Home   <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">  Link  </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">  Disabled  </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <span onclick="openNav()">open</span>
+
+  <div id="content-body">
+    
+    
+  </div>
+  
   </body>
 </html>
