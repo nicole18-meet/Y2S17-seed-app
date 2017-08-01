@@ -17,3 +17,7 @@ session = DBSession()
 @app.route('/')
 def hello_world():
     return render_template('index.html')
+
+@app.route('/diseases')
+def diseases():
+    return render_template('diseases.html')
