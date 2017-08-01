@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <head>
+  <style>
+  div.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+  }
+
+  div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+  }
+  .floating-box {
+      display: inline-block;
+      width: 220px;
+      height: 400px;
+      margin: 10px;
+      border: 0px solid #73AD21;  
+  }
+
+  .after-box {
+      border: 3px solid red; 
+  }
+  </style>
 
       <title>Diseases</title>
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -44,15 +72,26 @@
 
   <div id="content-body">
     
-
+<h1> diseases</h1>
   </div>
+
   <div class="text1">
   <p class="text1">
+  <div class="background">
+    <div class="transbox">
+      <p>Welcome to Diseases!
+  Our platform allows you to learn and discover more about different diseases and/or medical conditions out there. <br>
+  In addition to the wide knowledge found here, you get an exclusive expirience allowing you to go through the daily steps a real patient would have to go through.<br>
+  Another special feature is stories written by the patients themselves, showing the real point of view we are trying to put out there.</p>
+    </div>
+  <!--</div>
   Welcome to Diseases!
   Our platform allows you to learn and discover more about different diseases and/or medical conditions out there. <br>
   In addition to the wide knowledge found here, you get an exclusive expirience allowing you to go through the daily steps a real patient would have to go through. <br>
-  Another special feature is stories written by the patients themselves, showing the real point of view we are trying to put out there.</p>
-
+  Another special feature is stories written by the patients themselves, showing the real point of view we are trying to put out there.</p>-->
+<div class="text1">
+  <div class="background">
+    <div class="transbox">
   <p class="text1">We set ourselves a goal to help raise awareness about medical conditions and the consequences patients have to deal with as their result.</p>
   <p class="text1">If you are dealing with a medical condition and would like to share your story, we  invite you to send it to us to our email. <br> The stories will be checked and verified before they get uploaded.  
   <br>To send a story, click here </p>     <!--WE NEED TO ADD A BUTTON FOR THE SUBMIT STORY THING HERE-->
@@ -60,20 +99,22 @@
 
 <div>
 <h3 class="title1">Who are we?</h3>
-<div class="text1"> Carlos Hawari <br> My name is Carlos, I was born in Nazareth,Israel and I am a student in MEET.<br>
+<div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br>
+ <b>Carlos Hawari</b> <br> My name is Carlos, I was born in Nazareth,Israel and I am a student in MEET.<br>
 I'm very passionate about this project and really hope to see it succeed, the main reason for that is because I truly believe it is important for us to raise awarness about these diseases and hopefully minimize the damage these diseases are currently inflicting on alot of people in our world.
  </div>
-<div class="text1"> Yotam <br> <!--ADD INFORMATION--> </div>
-<div class="text1"> Hala <br> My name is Hala, I was born in jerusalem.
+ <div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br> <b>Yotam</b> <br> hey hey hey hey hey hey hey hey hey hey hey hey hey hey heyhey heyheyhey hey hey heyheyhey</div>
+<!--<div class="text1"> Yotam <br> ADD INFORMATION </div> -->
+<div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br><b>Hala</b> <br>My name is Hala, I was born in jerusalem.
 Our aim from this project is to raise people's knowledge about some of the most popular diseases our world is facing these days. I think that this is something essencial because using this website can help people know if they have any health problems, further more, they will know how to prevent some diseases. They will also gain some really omportant information, which will raise the community's awareness. </div>
-<div class="text1"> Lyne Shweiki <br> My name is Lyne, I was born in Jerusalem in 2001, I have A LOT of hobbies and interests:), and I'm currently a MEET student.
+<!--<div class="text1"> Hala <br> My name is Hala, I was born in jerusalem.
+Our aim from this project is to raise people's knowledge about some of the most popular diseases our world is facing these days. I think that this is something essencial because using this website can help people know if they have any health problems, further more, they will know how to prevent some diseases. They will also gain some really omportant information, which will raise the community's awareness. </div>-->
+<div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br><b>Lyne Shweiki</b> <br> My name is Lyne, I was born in Jerusalem in 2001, I have A LOT of hobbies and interests:), and I'm currently a MEET student.
 <br> I want this webapp to work out because I think it's gonna help a lot with sharing awareness, and also help people interersted in medicin and health get more information about what diseases we are facing and how to prevent them (if possible).
 <br>
 In order to develop this webapp, I built a bit on the main idea, took part in making the webapp and helped with the design. 
  </div>
- <div class="text1"> Nicole Kazakov <br> My name is Nicole, I'm 16 years old and was born in Jerusalem, Israel.<br> I was eager to start working on this website because the idea seemed amazing to me.<br> I think that many times, people who suffer from some kind of condition occasually feels misunderstood and experience despair. Their life consist different elements which mostly make everyday routine harder.<br> In my opinion, whether it is for educational purposes or just to know what people around us go through, each person must try our platform. 
-<br>I hope it will accomplish what we expect it to, and am looking forward to see it develop. 
+ <div class="floating-box"><img src="abc.jpg" style="width:150px;height:150px;"> <br><b>Nicole Kazakov</b> <br> My name is Nicole, I'm 16 years old and was born in Jerusalem, Israel.<br>The website's idea seemed amazing to me.<br> I think that people who suffer from some kind of condition occasually feels misunderstood and experience despair. Their life consist different elements which mostly make everyday routine harder.<br> In my opinion, whether it is for educational purposes or just to know what people around us go through, each person must try our platform. 
 
   </body>
 </html>
-n
