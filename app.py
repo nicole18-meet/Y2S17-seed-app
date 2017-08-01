@@ -29,3 +29,7 @@ def howcanihelp():
 @app.route('/playthegame')
 def playthegame():
     return render_template('playthegame.html')
+    
+@app.route('/diebetes')
+def diebetes():
+    return render_template('diebetes.html')

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 		<title> Diseases </title>
 	</head>
 	<body>
@@ -16,7 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('diseases')}}">  Diseases   <span class="sr-only">(current)</span></a> <br>
+            <a class="nav-link" href="{{ url_for('diseases')}}">  Diseases   </a> <br>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('howcanihelp')}}">  How Can I Help!  </a> <br>
@@ -33,7 +34,7 @@
 		<div><h3 class='title1'> Choose your disease! </h3></div>
 		<p class= "text1"> Click on a disease from the list below to receive more information about it!
 		<ul>
-		  <li> Diebetes </li>
+		  <li> <a href="{{ url_for('index')}}"> Diebetes </a>  </li>
 		  <li> Cancer </li>
 		  <li> HIV </li>
 		</ul>
