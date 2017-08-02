@@ -1,12 +1,25 @@
-from sqlalchemy import Column, DateTime, Integer, String, Boolean
+from sqlalchemy import Column, DateTime, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
-class YourModel(Base):
-    __tablename__  = 'yourmodel'
-    id             = Column(Integer, primary_key=True)
-    # ADD YOUR FIELD BELOW ID
 
-# IF YOU NEED TO CREATE OTHER TABLE 
-# FOLLOW THE SAME STRUCTURE AS YourModel
+class User(Base):
+    __tablename__  = 'user'
+    id             = Column(Integer, primary_key=True)
+    username       = Column(String)
+
+
+class Routine(Base):
+    __tablename__  = 'routine'
+    id             = Column(Integer, primary_key=True)
+    owner     	   = Column(Integer, ForeignKey("user.id"))
+    shoots         = relationship('Shoot')
+    
+
+class Shoot(Base):
+    __tablename__  = 'shoot'
+    id             = Column(Integer, primary_key=True)
+    is_taken       = Column(Boolean, default=False)
+    routine   	   = Column(Integer, ForeignKey("routine.id"))

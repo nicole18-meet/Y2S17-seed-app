@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 
 # SQLAlchemy
-from model import Base, YourModel
+from model import Base, User, Routine, Shoot
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import smtplib
@@ -28,13 +28,30 @@ def howcanihelp():
 
 @app.route('/playthegame')
 def playthegame():
-    return render_template('playthegame.html')
+    user_id = 1
+    routine= session.query(Routine).filter_by(owner=user_id).first()
+    return render_template('playthegame.html', routine=routine)
+
+@app.route('/shoots/<int:shoot_id>', methods=['GET','POST'])
+def edit_shoot(shoot_id):
+	shoot = session.query(Shoot).filter_by(id= shoot_id).first()
+	'''
+	if request.method == 'GET':
+		return render_template('playthegame.html',)
+	else:
+		shoots = request.form.get('take_meds')
+		return redirect(url('index.html'))
+	'''
+	if request.form.get('take_meds') == "Took the meds":
+		shoot.is_taken = True
+
+
 
 @app.route('/game', methods=['GET','POST'])
 def take_med():
-	if request.method == 'GET':
+    return render_template('take_med.html')
 
-		return render_template(' ')
+
 
 @app.route('/diebetes')
 def diebetes():
