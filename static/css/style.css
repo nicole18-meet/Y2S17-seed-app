@@ -3,10 +3,18 @@ body {font-family: impact
 background-image: url("biology.jpg")
 
 }
-.title1 {text-align: 
+.title1 {text-align:center;
+	color:red;
+	font-size: 160%;
 
 }
-.text1 {
+.text1 {text-align:center;
+	color:black;
+	font-size: 100%;
 	
+}
+h1 { text-align: center;
+    font-size: 300%;
+
 }
 
