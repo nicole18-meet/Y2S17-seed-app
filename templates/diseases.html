@@ -6,7 +6,8 @@
 		<title> Diseases </title>
 	</head>
 	<body>
-
+  <b>
+<div class="top">
 		<div id="nav-left-bar">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,13 +32,16 @@
   </div>
 
 
-		<div><h3 class='title1'> Choose your disease! </h3></div>
-		<p class= "text1"> Click on a disease from the list below to receive more information about it!
+		<div><h1 class='headline'> CHOOSE A DISEASE! </h1><br></div></div>
+    <div class="transbox">
+		<p class= "text1"><br><br> Click on a disease from the list below to receive more information about it!
 		<ul>
-		  <li> <a href="{{ url_for('diebetes')}}"> Diebetes </a>  </li>
+		  <li> <a href="{{ url_for('diebetes')}}"> Diebetes </a>  </li> <!--CHANGE LINK COLOR-->
 		  <li> Cancer </li>
 		  <li> HIV </li>
 		</ul>
 		</p>
+    </div>
+    </b>
 	</body>
 </html>

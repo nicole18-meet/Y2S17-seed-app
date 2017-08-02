@@ -3,32 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <head>
-  <style>
-  div.transbox {
-    margin: 30px;
-    background-color: #ffffff;
-    border: 1px solid black;
-    opacity: 0.6;
-    filter: alpha(opacity=60); /* For IE8 and earlier */
-  }
-
-  div.transbox p {
-    margin: 5%;
-    font-weight: bold;
-    color: #000000;
-  }
-  .floating-box {
-      display: inline-block;
-      width: 220px;
-      height: 400px;
-      margin: 10px;
-      border: 0px solid #73AD21;  
-  }
-
-  .after-box {
-      border: 3px solid red; 
-  }
-  </style>
 
       <title>Diseases</title>
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
@@ -42,7 +16,8 @@
 
 
   <body>
-      
+  <b>
+  <div class="top">
   <div id="nav-left-bar">
     <nav class="navbar-main">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,16 +28,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('diseases')}}">  Diseases  </a> <br>
-          </li>
+            <a class="nav-link" href="{{ url_for('diseases')}}" >  Diseases  </a> <br>
+          </li> 
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('howcanihelp')}}">  How Can I Help!  </a> <br>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="{{ url_for('playthegame')}}">  Play The Game! </a>  <br>  
-              <br>
-              <br>
-              <br>
+            <a class="nav-link disabled" href="{{ url_for('playthegame')}}">  Play The Game! </a>  
 
           </li>
         </ul>
@@ -72,7 +44,9 @@
 
   <div id="content-body">
     
-<h1> diseases</h1>
+<h1 class="headline"> DISEASES</h1>
+<br>
+  </div>
   </div>
 
   <div class="text1">
@@ -94,27 +68,31 @@
     <div class="transbox">
   <p class="text1">We set ourselves a goal to help raise awareness about medical conditions and the consequences patients have to deal with as their result.</p>
   <p class="text1">If you are dealing with a medical condition and would like to share your story, we  invite you to send it to us to our email. <br> The stories will be checked and verified before they get uploaded.  
-  <br>To send a story, click here </p>     <!--WE NEED TO ADD A BUTTON FOR THE SUBMIT STORY THING HERE-->
-</div>
+  <br>To send a story, click here </p> </div>    <!--WE NEED TO ADD A BUTTON FOR THE SUBMIT STORY THING HERE-->
 
-<div>
+
+
 <h3 class="title1">Who are we?</h3>
-<div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br>
- <b>Carlos Hawari</b> <br> My name is Carlos, I was born in Nazareth,Israel and I am a student in MEET.<br>
+<div class="floating-box"> 
+<div class="transbox">
+<img src="abc.jpg" style="width:150px;height:150px;"><br>
+ <div class="name">Carlos Hawari </div> <br> My name is Carlos, I was born in Nazareth,Israel and I am a student in MEET.<br>
 I'm very passionate about this project and really hope to see it succeed, the main reason for that is because I truly believe it is important for us to raise awarness about these diseases and hopefully minimize the damage these diseases are currently inflicting on alot of people in our world.
- </div>
- <div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br> <b>Yotam</b> <br> hey hey hey hey hey hey hey hey hey hey hey hey hey hey heyhey heyheyhey hey hey heyheyhey</div>
+</div>
+</div>
+ <div class="floating-box"><div class="transbox"> <img src="abc.jpg" style="width:150px;height:150px;"><br> <div class="name">Yotam</div> <br> hey hey hey hey hey hey hey hey hey hey hey hey hey hey heyhey heyheyhey hey hey heyheyhey</div></div>
 <!--<div class="text1"> Yotam <br> ADD INFORMATION </div> -->
-<div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br><b>Hala</b> <br>My name is Hala, I was born in jerusalem.
-Our aim from this project is to raise people's knowledge about some of the most popular diseases our world is facing these days. I think that this is something essencial because using this website can help people know if they have any health problems, further more, they will know how to prevent some diseases. They will also gain some really omportant information, which will raise the community's awareness. </div>
+<div class="floating-box"> <div class="transbox"><img src="abc.jpg" style="width:150px;height:150px;"><br><div class="name">Hala</div><br>My name is Hala, I was born in jerusalem.
+Our aim from this project is to raise people's knowledge about some of the most popular diseases our world is facing these days. I think that this is something essencial because using this website can help people know if they have any health problems, further more, they will know how to prevent some diseases. They will also gain some really omportant information, which will raise the community's awareness. </div></div>
 <!--<div class="text1"> Hala <br> My name is Hala, I was born in jerusalem.
 Our aim from this project is to raise people's knowledge about some of the most popular diseases our world is facing these days. I think that this is something essencial because using this website can help people know if they have any health problems, further more, they will know how to prevent some diseases. They will also gain some really omportant information, which will raise the community's awareness. </div>-->
-<div class="floating-box"> <img src="abc.jpg" style="width:150px;height:150px;"><br><b>Lyne Shweiki</b> <br> My name is Lyne, I was born in Jerusalem in 2001, I have A LOT of hobbies and interests:), and I'm currently a MEET student.
+
+<div class="floating-box"><div class="transbox"> <img src="abc.jpg" style="width:150px;height:150px;"><br><div class="name">Lyne Shweiki</div> <br> My name is Lyne, I was born in Jerusalem in 2001, I have A LOT of hobbies and interests:), and I'm currently a MEET student.
 <br> I want this webapp to work out because I think it's gonna help a lot with sharing awareness, and also help people interersted in medicin and health get more information about what diseases we are facing and how to prevent them (if possible).
 <br>
 In order to develop this webapp, I built a bit on the main idea, took part in making the webapp and helped with the design. 
- </div>
- <div class="floating-box"><img src="abc.jpg" style="width:150px;height:150px;"> <br><b>Nicole Kazakov</b> <br> My name is Nicole, I'm 16 years old and was born in Jerusalem, Israel.<br>The website's idea seemed amazing to me.<br> I think that people who suffer from some kind of condition occasually feels misunderstood and experience despair. Their life consist different elements which mostly make everyday routine harder.<br> In my opinion, whether it is for educational purposes or just to know what people around us go through, each person must try our platform. 
-
+ </div></div>
+ <div class="floating-box"><div class="transbox"><img src="abc.jpg" style="width:150px;height:150px;"> <br><div class="name"> Nicole Kazakov </div><br> My name is Nicole, I'm 16 years old and was born in Jerusalem, Israel.<br>The website's idea seemed amazing to me.<br> I think that people who suffer from some kind of condition occasually feels misunderstood and experience despair. Their life consist different elements which mostly make everyday routine harder.<br> In my opinion, whether it is for educational purposes or just to know what people around us go through, each person must try our platform. </div></div>
+</b>
   </body>
 </html>
