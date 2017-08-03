@@ -7,3 +7,6 @@ venv
 
 # ngrok
 ngrok*
+
+#database
+*.db
