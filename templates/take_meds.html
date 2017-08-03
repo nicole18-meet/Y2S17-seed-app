@@ -64,4 +64,15 @@
 
   </div>
 
+Routine: {{routine.id}}
+{% for shoot in routine.shoots %}
+	shoot id is {{shoot.id}}
+ shoot is taken ? {{shoot.is_taken}}
+ <form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
+ 	<input type="submit" name="Took shoot">
+</form>
+{% endfor %}
+<form>
+<input id='checkbox' type='checkbox' name = 'take_meds'    value = 'Take Meds'>
+
 </form>

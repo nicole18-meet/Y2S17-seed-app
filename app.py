@@ -56,6 +56,7 @@ def edit_shoot(shoot_id):
     else:
         print("inside taken", file=sys.stderr)
         shoot.is_taken = True
+
     session.commit()
     return redirect(url_for('start_game'))
 

@@ -16,7 +16,9 @@ class User(Base):
 class Routine(Base):
     __tablename__ = 'routine'
     id            = Column(Integer, primary_key=True)
+
     created_at    = Column(DateTime, default=datetime.datetime.now)
+
     owner         = Column(Integer, ForeignKey("user.id"))
     shoots        = relationship('Shoot')
     
@@ -28,4 +30,5 @@ class Shoot(Base):
     taken_time    = Column(DateTime)
     is_taken      = Column(Boolean, default=False)
     is_missed     = Column(Boolean, default=False)
+
     routine   	  = Column(Integer, ForeignKey("routine.id"))
