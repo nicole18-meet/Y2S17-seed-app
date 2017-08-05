@@ -80,3 +80,6 @@ h1 { text-align: center;
 h4{
   font-weight: bold;
 }
+.link {
+  color: blue;
+}
