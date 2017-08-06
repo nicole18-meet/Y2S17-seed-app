@@ -50,34 +50,39 @@
 
 
 <div class="routine-list">
+<center>
 	<table>
-	<tr>
-		<th> Time of day </th>
-		<th> Description </th>
-		<th> Button </th>
+	<tr id="title-head">
+
+		<th width="10%"> Time</th>
+		<th> Description  </th>
+		<th> Button  </th>
 		<th> Registration </th>
 	</tr>
 
 	{% for shoot in routine.shoots %}
 		<tr>
-		<td>{{shoot.taken_time.strftime('%H-%M')}}</td>
-		<td> {{shoot.title}}</td>
+		<td> {{shoot.taken_time.strftime('%H-%M')}} </td> 
+		<td> {{shoot.title}} </td>
 		<td>
 			{% if shoot.is_missed %}
+
 
 			{%elif shoot.is_taken%}
 
 			{% else %}
-				<form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
+				<form class='button' action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
 					<input id="medicine_button" type="submit" name="Took_shoot" value="Register medicine">	
+
 				</form>
 				{% endif %}
 
 		</td>
-		<td> {% if shoot.is_missed %}
+		<td>  {% if shoot.is_missed %}
   				It's too late!
   			{% elif shoot.is_taken%}
   				Medicine registered!
+
   			{% endif %}
 
   			{%endfor%}
@@ -91,7 +96,8 @@
 		{%endif%}
 
 
-  			
+  	</center>		
   </div>
+  
 
 
