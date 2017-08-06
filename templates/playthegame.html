@@ -11,9 +11,6 @@
 <div class="top">
 		<div id="nav-left-bar">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <a class="navbar-brand" href="{{ url_for('index')}}">  Home  </a> <br>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,8 +29,6 @@
     </nav>
   </div>
 
-
-<input type="button" name="take_meds" value="Took the meds">
     
 		<h1 class='headline'> PLAY THE GAME! </h1><br></div>
 		<h3 class= "title1"><br> INSTRUCTIONS</h3>
@@ -53,10 +48,10 @@ During the game you will be amazed to find out how much a single person is deali
 
 </div>
 	
-		<h3 class= "title1"> INSTRUCTIONS</h3>
-<p class="text1"></p>
+		
+<p class="start_game">  <a id="game_link" href="{{url_for('start_game')}}"><b> Start the game </b> </a> </p>
 
-<a href="{{url_for('start_game')}}"><b>Start the game</b></a>
+
                                                                                                                                                                                                                                     	
     </div>
 <div class="routine_list">
