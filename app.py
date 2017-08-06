@@ -57,6 +57,7 @@ def edit_shoot(shoot_id):
     	redirect(url_for('start_game'))
     else:
         shoot.is_taken = True
+
     session.commit()
     return redirect(url_for('start_game'))
 

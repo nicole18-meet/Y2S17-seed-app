@@ -2,6 +2,12 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <script src="{{ url_for('static', filename='js/game.js') }}"> </script>
+
+
   <head>
 
       <title>Take meds</title>
@@ -15,6 +21,33 @@
   </head>
 
 <body>
+<b>
+<div class="top">
+    <div id="nav-left-bar">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <a class="navbar-brand" href="{{ url_for('index')}}">  Home  </a> <br>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('diseases')}}">  Diseases   </a> <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('howcanihelp')}}">  How Can I Help!  </a> <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="{{ url_for('playthegame')}}">  Play The Game! </a> <span class="sr-only">(current)</span> <br> 
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  </div>
+
+
 
 <div class="routine-list">
 	<table>
@@ -49,7 +82,17 @@
 				
 	{% endfor %}
 	</table>
-
   </div>
+
+Routine: {{routine.id}}
+{% for shoot in routine.shoots %}
+	shoot id is {{shoot.id}}
+ shoot is taken ? {{shoot.is_taken}}
+ <form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
+ 	<input type="submit" name="Took shoot">
+</form>
+{% endfor %}
+<form>
+<input id='checkbox' type='checkbox' name = 'take_meds'    value = 'Take Meds'>
 
 </form>
