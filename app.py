@@ -66,9 +66,17 @@ def edit_shoot(shoot_id):
 def start_game():
     today = datetime.datetime.now()
     routine = session.query(Routine).filter(extract('year', Routine.created_at) == today.year, extract('month', Routine.created_at) == today.month, extract('day', Routine.created_at) == today.day).first()
+    msg = ""
     if not routine:
         routine = create_routine()
-    return render_template('take_meds.html', routine=routine, today=today)
+    is_over = False
+    if today >= datetime.datetime(today.year, today.month, today.day, 22, 30):
+    	is_over = True
+   # routine = session.query(Routine).first()
+    list1 = compute_takens(routine)
+    is_missed_num = list1[0]
+    is_taken_num = list1[1]
+    return render_template('take_meds.html', routine=routine, today=today, is_over=is_over, is_missed_num = is_missed_num, is_taken_num = is_taken_num)
 
 
 @app.route('/diebetes')
@@ -97,10 +105,12 @@ def create_routine():
 		19: "Test blood sugar level!",
 		20: "Insulin shot for lunch + test blood sugar level!",
 		21: "Test blood sugar level!",
-		22: "Night insulin shot + test blood sugar level - good night!",
+		22: "Night insulin shot + test blood sugar level!",
 
 	}
+	session.add(r)
 
+	shots_missed = 0
 	for i in range(8, 23):
 		taken_time = datetime.datetime(t.year, t.month, t.day, i, 0)
 		shoot = Shoot(
@@ -109,9 +119,25 @@ def create_routine():
 			)
 		too_late= (t - taken_time).total_seconds()
 		if too_late > 300:
+			shots_missed+=1
 			shoot.is_missed = True
+		
 		r.shoots.append(shoot)
 		session.add(shoot)
+	session.commit()
+
+
+def compute_takens(r):
+	is_taken_num = 0
+	is_missed_num = 0
+	for s in r.shoots:
+		if s.is_taken:
+			is_taken_num += 1
+		elif s.is_missed:
+			is_missed_num += 1
+	return (is_missed_num, is_taken_num) 
+
+
 
 	# shoot_2  = Shoot(title= ,taken_time=datetime.datetime(t.year, t.month, t.day, 9, 0))
 	# shoot_3  = Shoot(title= "Insulin shot for breakfast + test blood suagr level!",taken_time=datetime.datetime(t.year, t.month, t.day, 10, 0))

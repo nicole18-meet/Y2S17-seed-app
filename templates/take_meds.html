@@ -65,34 +65,33 @@
 		<td>
 			{% if shoot.is_missed %}
 
+			{%elif shoot.is_taken%}
+
 			{% else %}
 				<form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
-					<input type="submit" name="Took shoot" value="Register medicine">	
+					<input id="medicine_button" type="submit" name="Took_shoot" value="Register medicine">	
 				</form>
 				{% endif %}
+
 		</td>
 		<td> {% if shoot.is_missed %}
   				It's too late!
   			{% elif shoot.is_taken%}
   				Medicine registered!
   			{% endif %}
+
+  			{%endfor%}
 		</td>
 		</tr>
-  				
-				
-	{% endfor %}
-	</table>
+		</table>
+		{% if is_over and is_missed_num >= is_taken_num %}
+		<h1 class="result">You have treated your diabetes poorly today. You feel really bad right now. </h1> 
+		{%elif is_over and is_missed_num < is_taken_num%}
+		<h1 class="result">Congratulations! You have treated your diabetes well. You feel great! </h1>
+		{%endif%}
+
+
+  			
   </div>
 
-Routine: {{routine.id}}
-{% for shoot in routine.shoots %}
-	shoot id is {{shoot.id}}
- shoot is taken ? {{shoot.is_taken}}
- <form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
- 	<input type="submit" name="Took shoot">
-</form>
-{% endfor %}
-<form>
-<input id='checkbox' type='checkbox' name = 'take_meds'    value = 'Take Meds'>
 
-</form>
