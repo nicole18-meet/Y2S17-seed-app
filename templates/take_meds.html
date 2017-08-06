@@ -6,7 +6,7 @@
 
       <title>Take meds</title>
       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> 
 
       <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
@@ -16,51 +16,39 @@
 
 <body>
 
-<div class="routine_list">
+<div class="routine-list">
+	<table>
+	<tr>
+		<th> Time of day </th>
+		<th> Description </th>
+		<th> Button </th>
+		<th> Registration </th>
+	</tr>
+
 	{% for shoot in routine.shoots %}
-  		<ul>
-  			<h2 class="hour">{{shoot.taken_time.strftime('%H-%M')}}</h2> <br>
-  			{% if shoot.is_missed %}
-  				you missed your shot at ...
-  			{% else %}
-  				{{shoot.is_taken}}
-  				<h3 class="medical_task">{{shoot.title}}</h3>
-	  			<form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
-	 				<input type="submit" name="Took shoot">
+		<tr>
+		<td>{{shoot.taken_time.strftime('%H-%M')}}</td>
+		<td> {{shoot.title}}</td>
+		<td>
+			{% if shoot.is_missed %}
+
+			{% else %}
+				<form action="{{url_for('edit_shoot', shoot_id=shoot.id)}}" method="post">
+					<input type="submit" name="Took shoot" value="Register medicine">	
 				</form>
-				Take shot and test blood sugar level
 				{% endif %}
-  			<!-- <button class="register_shot_button" name="register_shot" onclick="hour_8()">  -->
-		</ul>
+		</td>
+		<td> {% if shoot.is_missed %}
+  				It's too late!
+  			{% elif shoot.is_taken%}
+  				Medicine registered!
+  			{% endif %}
+		</td>
+		</tr>
+  				
+				
 	{% endfor %}
-<!--   <ul> <h2 class="hour">9:00: </h2> <br>
-  <h3 class="medical_task"> Insulin shot before breakfeast </h3> </ul>
-  <ul> <h2 class="hour"> 10:00:</h2><br>
-  <h3 calss="medical_task"> Test blood sugar level </h3></ul>
-  <ul> <h2 class="hour"> 11:00: </h2> <br>
-  <h3 class="medical_task">  </h3> </ul>
-  <ul> <h2 class="hour">12:00: </h2> <br>
-  <h3 class="medical_task">  </h3> </ul>
-  <ul> <h2 class="hour"> 13:00</h2><br>
-  <h3 class="medical_task"> Noon insulin shot + test blood sugar level </h3> </ul>
-  <ul> <h2 class="hour"> 14:00: </h2> <br>
-  <h3 class="medical_task"> Insulin shot before lunch + test blood sugar level </h3> </ul>
-  <ul> <h2 class="hour">15:00: </h2> <br>
-  <h3 class="medical_task">  </h3> </ul>
-  <ul> <h2 class="hour"> 16:00</h2><br>
-  <h3 class="medical_task"> </h3> </ul>
-  <ul> <h2 class="hour"> 17:00: </h2> <br>
-  <h3 class="medical_task"></h3> </ul>
-  <ul> <h2 class="hour">18:00: </h2> <br>
-  <h3 class="medical_task"></h3> Evening insulin shot + test blood sugar level </ul>
-  <ul> <h2 class="hour"> 19:00</h2><br>
-  <h3 class="medical_task"> </h3> </ul>
-  <ul> <h2 class="hour"> 20:00: </h2> <br>
-  <h3 class="medical_task"> </h3> Insulin shot before dinner + test blood sugar level</ul>
-  <ul> <h2 class="hour">21:00: </h2> <br>
-  <h3 class="medical_task"> </h3> </ul>
-  <ul> <h2 class="hour"> 22:00</h2><br>
-  <h3 class="medical_task"> Night insulin shot - Good night!</h3> </ul> -->
+	</table>
 
   </div>
 
